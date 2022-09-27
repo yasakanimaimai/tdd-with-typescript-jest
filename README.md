@@ -26,6 +26,15 @@
 
 <br>
 
+## chapter4 (意図を語るテスト)
+- chapter3のequals()メソッドでは、型とamountが一致していることを等価とみなしたことを受けて
+Multiplicationで行う比較検査も同様にした。
+- 値の比較からオブジェクトの比較になったのでtoStrictEqualを使った。
+- amountがDollarクラス外で使用されなくなったので、privateにした。
+
 ## 参考記事
-> (副作用とは)同じ様に呼び出しても同じ結果が返ってくるとは限らない処理のことです
 > [副作用ってなんだ？　〜楽に小さく単体テストをしよう〜 - Qiita](https://qiita.com/suzuki-hoge/items/bad43630ad1ad723ca4a)
+> (副作用とは)同じ様に呼び出しても同じ結果が返ってくるとは限らない処理のことです
+
+> [Github ローカルリポジトリをリモートリポジトリと紐づける - Qiita](https://qiita.com/miriwo/items/a7be71f6a238b09eda10)
+> `git remote add origin コピーしたリポジトリアドレス`
