@@ -39,9 +39,20 @@ Multiplicationで行う比較検査も同様にした。
 フランを追加することをまず目標とし、ドルのコードをコピペして一旦テストまで通るようにした。
 基本的にコピペはNG。すぐに重複を削除したい。
 
+
+<br>
+
+## chapter6 (テスト不足に気付いたら)
+- DollarとそれをコピペしたFrancの重複を無くしたいため、Moneyクラスを作り、両クラスに継承させた。
+- まずは手軽そうなamountとequalsメソッドをMoneyクラスに移動した。
+- DollarとFrancを比較したら。。という疑問は一旦保留してリストに追加した。
+
 ## 参考記事
 > [副作用ってなんだ？　〜楽に小さく単体テストをしよう〜 - Qiita](https://qiita.com/suzuki-hoge/items/bad43630ad1ad723ca4a)
 > (副作用とは)同じ様に呼び出しても同じ結果が返ってくるとは限らない処理のことです
 
 > [Github ローカルリポジトリをリモートリポジトリと紐づける - Qiita](https://qiita.com/miriwo/items/a7be71f6a238b09eda10)
 > `git remote add origin コピーしたリポジトリアドレス`
+
+> [FN1609004 | TypeScript入門 03: クラスを継承して使う | HTML5 : テクニカルノート](http://www.fumiononaka.com/Business/html5/FN1609004.html)
+> - サブクラスのコンストラクタ(constructor())は、関数super()でスーパークラスのコンストラクタを呼びださなければなりません。
