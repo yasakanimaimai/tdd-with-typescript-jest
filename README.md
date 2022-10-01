@@ -39,13 +39,22 @@ Multiplicationで行う比較検査も同様にした。
 フランを追加することをまず目標とし、ドルのコードをコピペして一旦テストまで通るようにした。
 基本的にコピペはNG。すぐに重複を削除したい。
 
-
 <br>
 
 ## chapter6 (テスト不足に気付いたら)
 - DollarとそれをコピペしたFrancの重複を無くしたいため、Moneyクラスを作り、両クラスに継承させた。
 - まずは手軽そうなamountとequalsメソッドをMoneyクラスに移動した。
 - DollarとFrancを比較したら。。という疑問は一旦保留してリストに追加した。
+
+<br>
+
+## chapter7 (疑念をテストに翻訳する)
+- Dollar(5) == Franc(5)を比較したらtrueになってしまったので、
+amountだけでなくクラス名も比較対象に加えて通貨の比較も検証するようにした。
+- しかし、通貨の比較をするためにクラス名を取得するのは、モデル内で言語的な処理をしているので、
+次元がずれている。できれば財務の世界の言葉で比較を行いたい。
+- ちなみに`toBeTruthy`はオブジェクトが定義されていればtrueになってしまうので`toBe(true)`を使うこと
+
 
 ## 参考記事
 > [副作用ってなんだ？　〜楽に小さく単体テストをしよう〜 - Qiita](https://qiita.com/suzuki-hoge/items/bad43630ad1ad723ca4a)
@@ -56,3 +65,14 @@ Multiplicationで行う比較検査も同様にした。
 
 > [FN1609004 | TypeScript入門 03: クラスを継承して使う | HTML5 : テクニカルノート](http://www.fumiononaka.com/Business/html5/FN1609004.html)
 > - サブクラスのコンストラクタ(constructor())は、関数super()でスーパークラスのコンストラクタを呼びださなければなりません。
+
+> [TypeScriptとJavaとの違いによるつまずきと「循環参照」 - こまぶろ](https://ky-yk-d.hatenablog.com/entry/2018/11/11/071020)
+> - ここまできて、自分の最初の推測「クラスの循環参照が原因だ」が誤りだったということがわかった。問題なのは、クラスの循環参照ではなく、モジュール同士の循環参照だ。では、モジュールの循環参照を無くせば正常に動作するのだろうか。
+
+> [JSの二重否定 | すな.dev](https://www.sunapro.com/js%E3%81%AE%E4%BA%8C%E9%87%8D%E5%90%A6%E5%AE%9A/)
+> ```ts
+> //objは定義されてない
+> console.log(obj) //undefined
+> console.log(!obj) //true
+> console.log(!!obj) //false
+> ```
