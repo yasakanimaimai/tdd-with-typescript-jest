@@ -13,3 +13,4 @@
 - [x] FrancとDollarを比較する
 - [x] equalsの一般化
 - [ ] 通貨の概念
+- [ ] testFrancMultiplicationを削除する？

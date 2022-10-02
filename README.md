@@ -55,6 +55,14 @@ amountだけでなくクラス名も比較対象に加えて通貨の比較も�
 次元がずれている。できれば財務の世界の言葉で比較を行いたい。
 - ちなみに`toBeTruthy`はオブジェクトが定義されていればtrueになってしまうので`toBe(true)`を使うこと
 
+<br>
+
+## chapter8 (実装を隠す)
+- サブクラスのDollarとFrancを削除したいため、timesメソッドをMoneyクラスに移した
+  - サブクラスを参照しているテスト箇所をMoney型に変更するところから始めた
+  - Moneyクラスでサブクラスのインスタンス化に対応するため、Factoryメソッドをstaticで実装した
+- Money, Dollar, Francファイルで循環参照になっていたので、Moneyファイルにサブクラスを同居させた
+
 
 ## 参考記事
 > [副作用ってなんだ？　〜楽に小さく単体テストをしよう〜 - Qiita](https://qiita.com/suzuki-hoge/items/bad43630ad1ad723ca4a)
