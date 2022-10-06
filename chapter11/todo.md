@@ -8,7 +8,7 @@
 - [ ] nullとの等価性比較
 - [ ] 他のオブジェクト等価性比較
 - [x] 5フラン * 2 = 10フラン
-- [ ] DollarとFrancの重複
+- [x] DollarとFrancの重複
 - [x] timesの一般化
 - [x] FrancとDollarを比較する
 - [x] equalsの一般化
