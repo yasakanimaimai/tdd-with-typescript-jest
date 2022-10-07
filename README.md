@@ -99,6 +99,17 @@ TSは抽象化を促していると考えられる。
 - 計算結果は将来複雑な実装になりそうなので、Expressionに任せた。一旦空のインターフェイスを作った。
 - 計算結果の換算をBankオブジェクトに任せた。
 
+<br>
+
+## chapter13 (実装を導くテスト)
+- todoを進めるためにまずテストを書き、テスト上必要なオブジェクトの実装を進めた
+- 一旦強引に実装を進めつつ、重複を削除したり、ポリモーフィズムにしたり。
+- JavaとTypeScriptのprotected修飾子の強さ違う？
+SumクラスでMoney.amountにアクセスできないんだが。。
+=> Javaは同じパッケージ内であればアクセスできるのがTSではできない。
+- Bankオブジェクトにreduceメソッドを実装したはいいが、結局キャストしてしまうということは
+Sum以外のオブジェクト(Moneyなど)が入る
+
 
 ## 参考記事
 > [副作用ってなんだ？　〜楽に小さく単体テストをしよう〜 - Qiita](https://qiita.com/suzuki-hoge/items/bad43630ad1ad723ca4a)
@@ -124,3 +135,6 @@ TSは抽象化を促していると考えられる。
 > [【TS】クラスのメソッドとプロパティは違うよって話](https://zenn.dev/nekoniki/articles/6a4f2ce39a4bc6)
 > superで扱うことができるのは 「クラスメソッド」 なので、
 メソッドでないプロパティに対してsuperを指定しても当該のエラーが発生するという仕組みです。
+
+> [【Jest・エラー】serializes to the same string | milestones](https://de-milestones.com/%E3%80%90jest%E3%83%BB%E3%82%A8%E3%83%A9%E3%83%BC%E3%80%91serializes-to-the-same-string/)
+> toBeではなくtoEqualを使用すればOKです。
