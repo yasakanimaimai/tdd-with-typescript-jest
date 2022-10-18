@@ -110,6 +110,11 @@ SumクラスでMoney.amountにアクセスできないんだが。。
 - Bankオブジェクトにreduceメソッドを実装したはいいが、結局キャストしてしまうということは
 Sum以外のオブジェクト(Moneyなど)が入る
 
+<br>
+
+## chapter14 (学習用テストと回帰テスト)
+
+
 
 ## 参考記事
 > [副作用ってなんだ？　〜楽に小さく単体テストをしよう〜 - Qiita](https://qiita.com/suzuki-hoge/items/bad43630ad1ad723ca4a)
