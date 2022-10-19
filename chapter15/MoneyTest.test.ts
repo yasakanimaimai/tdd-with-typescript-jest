@@ -61,10 +61,12 @@ describe('', () => {
     expect(result).toStrictEqual(Money.dollar(1));
   })
 
-  it('回帰テスト', () => {
-    // expect(new Bank().rate('USD', 'USD')).toBe(1);
+  it('MixedAddition', () => {
+    const fiveDollar: Expression = Money.dollar(5);
+    const tenFranc: Expression = Money.franc(10);
     const bank = new Bank();
     bank.addRate('CHF', 'USD', 2);
-    expect(bank.rate('CHF','USD')).toBe(2);
+    const result = bank.reduce(fiveDollar.plus(tenFranc), 'USD');
+    expect(result).toStrictEqual(Money.dollar(10));
   })
 });
