@@ -113,6 +113,11 @@ Sum以外のオブジェクト(Moneyなど)が入る
 <br>
 
 ## chapter14 (学習用テストと回帰テスト)
+- Mapのキーから値を取得するときに型チェックがちゃんと働かない
+→TSではMapのキーとしてオブジェクトを指定すると参照渡しになるので、値が同じでも別のキーとして扱われる。
+TSではキーにオブジェクトを指定して同値検索できるような仕組みがなさそうなので、Pairを別の仕組みに変える必要がある。
+→Pairを値オブジェクトパターンにして、fromとtoの組み合わせを文字列として出力する方式にした。
+
 
 
 
@@ -143,3 +148,8 @@ Sum以外のオブジェクト(Moneyなど)が入る
 
 > [【Jest・エラー】serializes to the same string | milestones](https://de-milestones.com/%E3%80%90jest%E3%83%BB%E3%82%A8%E3%83%A9%E3%83%BC%E3%80%91serializes-to-the-same-string/)
 > toBeではなくtoEqualを使用すればOKです。
+
+> [書籍「テスト駆動開発」をTypeScriptで勉強するときのつまづきポイント](https://zenn.dev/yuma_ito_bd/articles/1612b1f0c92cf4)
+> Javaでは、Moneyクラスをキーとして持つMapクラスMap<Money, Integer>は、検索（get）するときにMoneyクラスのhashCodeメソッドを利用します。よって、hashCodeメソッドが同じ値を返却する限り、同じ値（為替レート）を取得することができます。
+> 一方、TypeScriptのMapクラスでは、オブジェクトがキーである場合は参照が同じでないと同じキーとして扱いません。（参考：Map - JavaScript | MDN）
+> 解決策の1つとしては、Mapクラスのキーをオブジェクトではなく、stringにするという方法があります。stringであれば値で比較するので、同じ文字列のキーであれば、同じ値を取得することができます。

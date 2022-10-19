@@ -2,6 +2,7 @@ import { Money } from './Money';
 import { Expression } from './Expression';
 import { Bank } from './Bank';
 import { Sum } from './Sum';
+import { RateKey } from './RateKey';
 
 
 describe('', () => {
@@ -51,5 +52,19 @@ describe('', () => {
     const bank = new Bank();
     const result = bank.reduce(Money.dollar(1), "USD");
     expect(result).toStrictEqual(Money.dollar(1));
+  })
+
+  it('ReduceMoneyDifferentCurrency', () => {
+    const bank = new Bank();
+    bank.addRate('CHF', 'USD', 2);
+    const result: Money = bank.reduce(Money.franc(2), 'USD');
+    expect(result).toStrictEqual(Money.dollar(1));
+  })
+
+  it('回帰テスト', () => {
+    // expect(new Bank().rate('USD', 'USD')).toBe(1);
+    const bank = new Bank();
+    bank.addRate('CHF', 'USD', 2);
+    expect(bank.rate('CHF','USD')).toBe(2);
   })
 });
