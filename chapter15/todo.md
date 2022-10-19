@@ -1,0 +1,6 @@
+- [ ] 5ドル + 10フラン = 10フラン
+- [x] 5ドル + 5ドル = 10ドル
+- [ ] 5ドル + 5ドル がMoneyを返す
+- [x] Bank.reduce(Money)
+- [x] Moneyを変換して換算を行う
+- [x] Reduce(Bank, String)
